@@ -47,5 +47,13 @@ $ source activate tensorflow
 import tensorflow as tf
 ```  
 : No error -> success  
+
+### 3. Syncronize jupyter notebook with tensorflow-conda enviroment  
+```bash
+$ source activate tensorflow  
+$ python -m ipykernel install --user --name tensorflow --display-name "Python (tensorflow)"
+$ jupyter notebook
+```  
+: When you click the [new] you can find the Python(tensorflow)
   
 
