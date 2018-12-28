@@ -16,7 +16,7 @@ $ which pip
 ```  
 : ~/anaconda/bin/pip  
 
-### 2. Tensorflow install under conda enviroment  
+### 2. Tensorflow installation under conda enviroment  
 
  - create new conda enviroment named tensorflow  
 ```bash
@@ -28,7 +28,7 @@ $ conda create -n tensorflow python=2.7
 $ source activate tensorflow
 ```  
 
- - install tensorflow [Releases](https://www.tensorflow.org/install/install_linux#the_url_of_the_tensorflow_python_package)  
+ - install tensorflow ...[All releases](https://www.tensorflow.org/install/install_linux#the_url_of_the_tensorflow_python_package)  
 ``` bash
 $ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl  
 $ pip install --upgrade $TF_BINARY_URL
