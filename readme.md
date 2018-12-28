@@ -42,6 +42,7 @@ $ source deactivate tensorflow
  - test  
 ```bash
 $ source activate tensorflow
+$ python
 ```  
 ```python
 import tensorflow as tf
