@@ -57,4 +57,6 @@ $ jupyter notebook
 ```  
 : When you click the [new] you can find the Python(tensorflow)
   
+  
+-Reference: [Ref](http://shilan.tistory.com/entry/%ED%85%90%EC%84%9C%ED%94%8C%EB%A1%9C%EC%9A%B0-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-CentOS-71Python-27Anaconda)  
 
