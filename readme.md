@@ -20,25 +20,32 @@ $ which pip
 
  - create new conda enviroment named tensorflow  
 ```bash
-$ conda create -n tensorflow python=2.7```  
+$ conda create -n tensorflow python=2.7
+```  
 
  - activate the conda enviroment  
 ```bash
-$ source activate tensorflow```  
+$ source activate tensorflow
+```  
 
- - install tensorflow (https://www.tensorflow.org/install/install_linux#the_url_of_the_tensorflow_python_package)  
+ - install tensorflow [Releases](https://www.tensorflow.org/install/install_linux#the_url_of_the_tensorflow_python_package)  
 ``` bash
 $ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl  
-$ pip install --upgrade $TF_BINARY_URL```  
+$ pip install --upgrade $TF_BINARY_URL
+```  
+
  - deactivate the conda enviroment  
 ```bash
-$ source deactivate tensorflow```  
+$ source deactivate tensorflow
+```  
 
  - test  
 ```bash
-$ source activate tensorflow```
+$ source activate tensorflow
+```  
 ```python
-import tensorflow as tf```  
+import tensorflow as tf
+```  
 : No error -> success  
   
 
