@@ -1,4 +1,4 @@
-1. Anaconda Installation  
+## 1. Anaconda Installation  
   
 ```bash
 $ wget https://repo.continuum.io/archive/Anaconda2-4.3.1-Linux-x86_64.sh  
@@ -10,8 +10,8 @@ $ export PATH=/home/[user_name]/anaconda/bin:$PATH
 ```bash
 $ conda  
 ```  
-:Man page open  
+: man page open  
 ```bash
 $ which pip  
 ```  
-:~/anaconda/bin/pip 
+: ~/anaconda/bin/pip 
