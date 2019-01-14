@@ -87,7 +87,6 @@ output: Client: ~~~ Server: ~~~
 
 ```bash
 $ docker run -u $(id -u):$(id -g) -it -p 8888:8888 tensorflow/tensorflow:nightly-py3-jupyter
-_You can access the following URL_
 ```  
   
 
