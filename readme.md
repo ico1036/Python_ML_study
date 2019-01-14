@@ -60,3 +60,53 @@ $ jupyter notebook
   
 -Reference: [Ref](http://shilan.tistory.com/entry/%ED%85%90%EC%84%9C%ED%94%8C%EB%A1%9C%EC%9A%B0-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-CentOS-71Python-27Anaconda)  
 
+---
+---
+  
+## Docker  
+
+### 1.Download a docker  
+
+```bash
+$ curl -fsSL https://get.docker.com/ | sudo sh
+```  
+ - Grant autority to users
+```bash
+$ sudo usermod -aG docker #USER
+```  
+ - Start docker and check
+```bash
+$ sudo systemctl start docker
+$ docker version
+```  
+output: Client: ~~~ Server: ~~~  
+
+### 2.Download a tensorflow with jupyternotebook image  
+
+```bash
+$ docker run -u $(id -u):$(id -g) -it -p 8888:8888 tensorflow/tensorflow:nightly-py3-jupyter
+```  
+####  _You can access the following URL_  
+
+### 3.Write or read images  
+ - Save the results(commit)
+```bash
+$	docker commit containername imagename 
+ex) docker commit sleepy_germain tensorflow/tensorflow
+```  
+ 	- You can find the name of the ended container as follwing
+```bash
+$ docker ps -a
+```  
+	- You cna find the name of the images as follwing
+```bash
+$ docker images
+*REPOSITORY is a name of image*
+```  
+ - Restart a container
+```bash
+$ docker start -a containerID
+```  
+
+
+
