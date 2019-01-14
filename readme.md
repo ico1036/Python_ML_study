@@ -85,8 +85,9 @@ output: Client: ~~~ Server: ~~~
 
 ```bash
 $ docker run -u $(id -u):$(id -g) -it -p 8888:8888 tensorflow/tensorflow:nightly-py3-jupyter
+_You can access the following URL_
 ```  
-####  _You can access the following URL_  
+  
 
 ### 3. Write or read images  
  - Save the results(commit)
@@ -105,7 +106,7 @@ $ docker ps -a
 - You cna find the name of the images as follwing
 ```bash
 $ docker images
-*REPOSITORY is a name of image*
+ _REPOSITORY is a name of image_
 ```  
 
 
