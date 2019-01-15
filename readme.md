@@ -1,3 +1,4 @@
+## Local installation  
 ### 1. Anaconda Installation  
   
 ```bash
@@ -64,6 +65,7 @@ $ jupyter notebook
 ---
   
 ## Docker  
+
 This is fast installation of tensorflow using docker  
 The basic understanding of docker must be preceded
 Read the [reference](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html)  
