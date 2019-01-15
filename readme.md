@@ -111,7 +111,7 @@ $ docker images
 ### 1. Nvidia drvier installation  
 __Beware the kernel panic!! First, try it using test-cpu__  
  - [Download](https://www.nvidia.com/Download/index.aspx?lang=en-us ) suitable driver file  
-#### __!!!Next step can make Kernel panic! Possible solutions are discribeed below the link!!!__  
+#### __!!!Next step can make Kernel panic! Possible solutions are discribed in (a) and (b)!!!__  
  - Rest steps for installation [Link](http://linux.systemv.pe.kr/nvidia-driver-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/
 )  
 #### a) __Reboot and press [f2] to enter BIOS and disable the secure booting__( This works well for me to escape from kernel panic )  
