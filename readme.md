@@ -91,11 +91,6 @@ $ docker run -u $(id -u):$(id -g) -it -p 8888:8888 tensorflow/tensorflow:nightly
   
 
 ### 3. Control container  
- - Save the results(commit)
-```bash
-$	docker commit containername imagename 
-ex) docker commit sleepy_germain tensorflow/tensorflow
-```  
  - Restart a container
 ```bash
 $ docker start -a containerID
