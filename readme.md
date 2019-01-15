@@ -111,15 +111,15 @@ $ docker images
 ### 1. Nvidia drvier installation  
 __Beware the kernel panic!! First, try it using test-cpu__  
  - [Download](https://www.nvidia.com/Download/index.aspx?lang=en-us ) suitable driver file  
- - __Next step can make Kernel panic Possible solutions are discribeed below the link  
+__Next step can make Kernel panic Possible solutions are discribeed below the link__  
  - Rest steps for installation [Link](http://linux.systemv.pe.kr/nvidia-driver-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/
 )
- - Reboot and press [f2] to enter BIOS and disable the secure booting( This works well for me to escape from kernel panic )
- - Change into run level3 ( [artl]+[F3] ) and re-install the Nvidia driver ( general solutions )
+__Reboot and press [f2] to enter BIOS and disable the secure booting( This works well for me to escape from kernel panic )__  
+__Change into run level3 ( [artl]+[F3] ) and re-install the Nvidia driver ( general solutions )__  
 
 ### 2. Nvidia-docker installation  
  
- - You need to have docker-ce-3:18.09.0.el7 version  [DownloadLink](https://docs.docker.com/install/linux/docker-ce/centos/
+ - You need to have "docker-ce-3:18.09.0.el7" version  [DownloadLink](https://docs.docker.com/install/linux/docker-ce/centos/
 )
  - Install the nvida-docker-2 [DownloadLink](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
  - When the gpu information appear, suecess!
