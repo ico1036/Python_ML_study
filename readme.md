@@ -67,7 +67,7 @@ $ jupyter notebook
 ## Docker  
 
 This is fast installation of tensorflow using docker  
-The basic understanding of docker must be preceded
+The basic understanding of docker must be preceded  
 Read the [reference](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html)  
 ### 1. Download a docker  
 
