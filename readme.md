@@ -107,5 +107,34 @@ $ docker images
  _REPOSITORY is a name of image_
 ```  
 
+## Tensorflow GPU  
+### 1. Nvidia drvier installation  
+__Beware the kernel panic!! First, try it using test-cpu__  
+ - [Download](https://www.nvidia.com/Download/index.aspx?lang=en-us ) suitable driver file  
+ - __Next step can make Kernel panic Possible solutions are discribeed below the link  
+ - Rest steps for installation [Link](http://linux.systemv.pe.kr/nvidia-driver-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/
+)
+ - Reboot and press [f2] to enter BIOS and disable the secure booting( This works well for me to escape from kernel panic )
+ - Change into run level3 ( [artl]+[F3] ) and re-install the Nvidia driver ( general solutions )
 
+### 2. Nvidia-docker installation  
+ 
+ - You need to have docker-ce-3:18.09.0.el7 version  [DownloadLink](https://docs.docker.com/install/linux/docker-ce/centos/
+)
+ - Install the nvida-docker-2 [DownloadLink](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
+ - When the gpu information appear, suecess!
+
+### 3. Tensorflow-gpu-image installasion
+ - You don not need to install the cuda using the Docker
+```bash
+docker run --runtime=nvidia -it -p 8888:8888 tensorflow/tensorflow:latest-gpu
+```  
+ - go to the url(it may be http://127.0.0.1:8888) and type the token which appear on yout terminal
+ - Test the cpu,gpu in jupyter notebook
+```python
+import tensorflow as tf
+from tensorflow.python.client import device_lib
+evice_lib.list_local_devices()
+```  
+: cpu and gpu information appear -> sucess 
 
