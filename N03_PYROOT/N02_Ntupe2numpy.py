@@ -3,22 +3,45 @@ from ROOT import *
 from root_numpy import root2array, tree2array
 from root_numpy import testdata
 from IPython.display import display
+import numpy as np
 
-# read signal dataset
+
+
+# --read signal dataset
 sig_file = TFile.Open('signal.root') 
 sig_tree = sig_file.Get('tree')   
 sig_arr  = tree2array(sig_tree)	
 sig_df   = pd.DataFrame(sig_arr)	
-sig_df.to_csv('data.csv', mode='w',header=False)
 
-#read background dataset
+# --read background dataset
 bkg_file = TFile.Open('background.root') 
 bkg_tree = bkg_file.Get('tree')   
 bkg_arr  = tree2array(bkg_tree)	
 bkg_df   = pd.DataFrame(bkg_arr)	
 bkg_df.to_csv('data.csv', mode='a',header=False)
 
-display(sig_df)
-display(bkg_df)
+# --Merge signal and bkg dataset
+data = pd.concat([sig_df,bkg_df],ignore_index=True)
+data = data.values
 
+# --Shuffle and Split dataset: Trainig, Validation, Test
+inds = np.arange(data.shape[0])
+tr   = int(0.6 * data.shape[0])  # Split ratio --> 6 : 2: 2
+np.random.RandomState(11).shuffle(inds)
+
+train_data = data[inds[:tr]]
+rest_data   = data[inds[tr:]]
+val_data = rest_data[:int(rest_data.shape[0] /2)]
+test_data = rest_data[int(rest_data.shape[0] /2):]
+
+print(data)
+print(train_data.shape)
+print(val_data.shape)
+print(test_data.shape)
+
+
+# --Write data as csv format
+np.savetxt('train_data.csv',train_data,fmt='%5.5f',delimiter =',')
+np.savetxt('val_data.csv',val_data,fmt='%5.5f',delimiter =',')
+np.savetxt('test_data.csv',test_data,fmt='%5.5f',delimiter =',')
 

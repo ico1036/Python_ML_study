@@ -9,22 +9,23 @@ from tensorflow.keras import layers
 
 
 # read data
-xy=np.loadtxt('data.csv', delimiter=',', dtype=np.float)
-np.random.shuffle(xy)
-x_data = xy[:,1:-1]
-y_data = xy[:,[-1]]
+train_data = np.loadtxt('train_data.csv', delimiter=',')
+val_data   = np.loadtxt('val_data.csv', delimiter=',')
+test_data  = np.loadtxt('test_data.csv', delimiter=',')
 
-# training data & test data
-tr = int(x_data.shape[0]*0.7)
-x_train = x_data[0:tr,:]
-y_train = y_data[0:tr,:]
-x_test = x_data[tr:,:]
-y_test = y_data[tr:,:]
+x_train = train_data[:,:-1]
+y_train = train_data[:,-1]
+
+x_val = val_data[:,:-1]
+y_val = val_data[:,-1]
+
+x_test = test_data[:,:-1]
+y_test = test_data[:,-1]
+
 
 print(x_train.shape)
+print(x_val.shape)
 print(x_test.shape)
-print(y_train.shape)
-print(y_test.shape)
 
 # HyperParameter
 batch_size = 32
@@ -70,7 +71,7 @@ try:
             tf.keras.callbacks.ModelCheckpoint(model_weights,
             monitor='val_loss', verbose=True, save_best_only=True)
         ],
-        validation_data=(x_test, y_test)
+        validation_data=(x_val, y_val)
     )
 except KeyboardInterrupt:
     print('Training finished early')
@@ -84,4 +85,5 @@ np.save(predictions_file, yhat)
 
 test_loss, test_acc = model.evaluate(x_test,y_test)
 print('test_acc: ', test_acc)
+
 
