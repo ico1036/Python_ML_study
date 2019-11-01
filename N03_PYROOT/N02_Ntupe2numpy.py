@@ -18,10 +18,24 @@ bkg_file = TFile.Open('background.root')
 bkg_tree = bkg_file.Get('tree')   
 bkg_arr  = tree2array(bkg_tree)	
 bkg_df   = pd.DataFrame(bkg_arr)	
-bkg_df.to_csv('data.csv', mode='a',header=False)
+
+# --Normalize
+def MinMaxScaler(data):
+    numerator = data - np.min(data,0)
+    denominator = np.max(data,0) - np.min(data,0)
+    return numerator / (denominator+1e-7)
+
+norm=False
+if norm == True:
+	sig_df.iloc[:,:-1] = MinMaxScaler(sig_df.iloc[:,:-1])
+	bkg_df.iloc[:,:-1] = MinMaxScaler(bkg_df.iloc[:,:-1])
+
 
 # --Merge signal and bkg dataset
 data = pd.concat([sig_df,bkg_df],ignore_index=True)
+
+display(data)
+
 data = data.values
 
 # --Shuffle and Split dataset: Trainig, Validation, Test

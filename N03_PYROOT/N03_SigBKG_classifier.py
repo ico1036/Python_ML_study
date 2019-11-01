@@ -29,20 +29,20 @@ print(x_test.shape)
 
 # HyperParameter
 batch_size = 32
-training_epochs=10
-neu = 20
+training_epochs=20
+neu = 64
 
 ## --Model
 x = layers.Input(shape=(3,))
 
 h = layers.Dense(neu, activation='relu')(x)
-#h = layers.Dropout(0.5)(h)
+h = layers.Dropout(0.5)(h)
 
 h = layers.Dense(neu, activation='relu')(x)
-#h = layers.Dropout(0.5)(h)
+h = layers.Dropout(0.5)(h)
 h = layers.Dense(neu, activation='relu')(x)
 
-#h = layers.Dropout(0.5)(h)
+h = layers.Dropout(0.5)(h)
 
 y = layers.Dense(1, activation='sigmoid')(h)
 model = tf.keras.Model(inputs = x,outputs = y)
